@@ -1,0 +1,31 @@
+{
+  "name": "chip4svenson",
+  "version": "1.0.0",
+  "description": "Runs the chip4svenson Twitter bot",
+  "main": "bot.js",
+  "dependencies": {
+    "twit": "^2.2.4",
+    "wordnik-bb": "^0.1.1",
+    "fs": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mutantlog/chip4svenson.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "zdarsky",
+    "chip4svenson"
+  ],
+  "author": "Ryan Bayne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mutantlog/chip4svenson/issues"
+  },
+  "homepage": "https://github.com/mutantlog/chip4svenson#readme"
+}
