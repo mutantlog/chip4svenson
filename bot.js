@@ -61,7 +61,9 @@ var strings = [
 "Jughead Jones would swear off burgers for a week if Chip Zdarsky could play Mr. Svenson #Riverdale #Chip4Svenson",
 "Look, Chip wants to be Mr. Svenson, do these pics prove his point? Who knows? #Riverdale #Chip4Svenson",
 "Sure, one's Swedish, the other's Canadian, but can you tell which one's which? #Riverdale #Chip4Svenson",
-"He'll be really good and he won't look directly into camera he swears #Riverdale #Chip4Svenson"
+"He'll be really good and he won't look directly into camera he swears #Riverdale #Chip4Svenson",
+"If Chip Zdarsky were to play Mr. Svenson on #Riverdale it would be A Very Nice Time! #Chip4Svenson",
+"He'll bring his own broom from home! #Riverdale #Chip4Svenson"
 ];
 var svenFile = svenPics[Math.floor(Math.random() * svenPics.length)];
 var chipFile = chipPics[Math.floor(Math.random() * chipPics.length)];
