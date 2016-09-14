@@ -26,20 +26,27 @@ function tweetChip4Svenson(tweetText,svenPic,chipPic) { // Main Tweeting functio
 	}
 	else {
 		T.post('media/upload', {media_data: svenPic}, function (err, data, response) { // First upload a pic of Svenson
-			var svenIdStr = data.media_id_string; // Get the identifier for the pic
-			var svenText = "A photo of Mr. Svenson, the janitor from Archie"; // Write alt text for the picture
-			var sven_meta_params = { media_id: svenIdStr, alt_text: { text: svenText } }; // Create an identifier for the pic and alt text
-			T.post('media/metadata/create', sven_meta_params, function(err, data, response) { // Post the metadata to Twitter
-				if (!err) {
-					T.post('media/upload', {media_data: chipPic}, function(err, data, response) { // Now we'll repeat for a photo of Chip
-						var chipIdStr = data.media_id_string;
-						var chipText = "A photo of Chip Zdarsky, the ideal person to portray Mr Svenson on the CW's Riverdale";
-						var chip_meta_params = { media_id: chipIdStr, alt_text: { text: chipText } };
-						T.post('media/metadata/create', chip_meta_params, function(err, data, response) {
+			if (!err) {
+				var svenIdStr = data.media_id_string; // Get the identifier for the pic
+				var svenText = "A photo of Mr. Svenson, the janitor from Archie"; // Write alt text for the picture
+				var sven_meta_params = { media_id: svenIdStr, alt_text: { text: svenText } }; // Create an identifier for the pic and alt text
+				T.post('media/metadata/create', sven_meta_params, function(err, data, response) { // Post the metadata to Twitter
+					if (!err) {
+						T.post('media/upload', {media_data: chipPic}, function(err, data, response) { // Now we'll repeat for a photo of Chip
 							if (!err) {
-								var params = { status : tweetText, media_ids : [svenIdStr, chipIdStr] }; // Ok, both images are ready with Metadata
-								T.post('statuses/update', params, function (err, data, response) { // Let's tweet!
-									if (err) {
+								var chipIdStr = data.media_id_string;
+								var chipText = "A photo of Chip Zdarsky, the ideal person to portray Mr Svenson on the CW's Riverdale";
+								var chip_meta_params = { media_id: chipIdStr, alt_text: { text: chipText } };
+								T.post('media/metadata/create', chip_meta_params, function(err, data, response) {
+									if (!err) {
+										var params = { status : tweetText, media_ids : [svenIdStr, chipIdStr] }; // Ok, both images are ready with Metadata
+										T.post('statuses/update', params, function (err, data, response) { // Let's tweet!
+											if (err) {
+												console.log('There was an error with Twitter:', err);
+											}
+										});
+									}
+									else {
 										console.log('There was an error with Twitter:', err);
 									}
 								});
@@ -48,12 +55,15 @@ function tweetChip4Svenson(tweetText,svenPic,chipPic) { // Main Tweeting functio
 								console.log('There was an error with Twitter:', err);
 							}
 						});
-					});
-				}
-				else {
-					console.log('There was an error with Twitter:', err);
-				}
-			})
+					}
+					else {
+						console.log('There was an error with Twitter:', err);
+					}
+				});
+			}
+			else {
+				console.log('There was an error with Twitter:', err);
+			}
 		});
 	}			
 }
