@@ -4,7 +4,7 @@
   "description": "Runs the chip4svenson Twitter bot",
   "main": "bot.js",
   "dependencies": {
-    "twit": "^2.2.4"
+    "twit": "^2.2.5"
   },
   "devDependencies": {},
   "scripts": {
