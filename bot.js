@@ -84,7 +84,8 @@ var strings = [ // And an array of a bunch of Tweets for the bot to post
 "Sure, one's Swedish, the other's Canadian, but can you tell which one's which? #Riverdale #Chip4Svenson",
 "He'll be really good and he won't look directly into camera he swears #Riverdale #Chip4Svenson",
 "If Chip Zdarsky were to play Mr. Svenson on #Riverdale it would be A Very Nice Time! #Chip4Svenson",
-"He'll bring his own broom from home! #Riverdale #Chip4Svenson"
+"He'll bring his own broom from home! #Riverdale #Chip4Svenson",
+"Remember sexy Ms. Grundy in season 1? Well who better to sex up Mr. Svenson for season 2? #Riverdale #Chip4Svenson"
 ];
 var svenFile = svenPics[Math.floor(Math.random() * svenPics.length)]; // And we'll pick one of Svenson at random
 var chipFile = chipPics[Math.floor(Math.random() * chipPics.length)]; // One of Chip at random
